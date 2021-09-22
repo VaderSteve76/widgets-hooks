@@ -3,10 +3,11 @@ import axios from 'axios';
 
 const Search = () => {
 
-  const [term, setTerm] = useState('');
+  const [term, setTerm] = useState('programming');
   const [results, setResults] = useState([]); 
 
   useEffect(() => {
+
     const search = async () => {
       const { data } = await axios.get('https://en.wikipedia.org/w/api.php', {
         params: {
@@ -19,10 +20,21 @@ const Search = () => {
     });
     setResults(data.query.search);
   };
-    if(term) {
-      search();
-    }
-  }, [term]);
+
+  if(term && !results.length) {
+    search();
+  } else {
+    const timeoutId = setTimeout(() => {
+      if(term) {
+        search();
+      }
+    }, 800);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }
+  
+}, [term]);
 
   const renderedResults = results.map((result) => {
     return (
