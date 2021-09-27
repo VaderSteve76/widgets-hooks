@@ -20,23 +20,23 @@ const items = [
 
 const options = [
   {
-    label: 'The color red',
-    value: 'red'
+    label: "The Color Red",
+    value: "red",
   },
   {
-    label: 'The color green',
-    value: 'green'
+    label: "The Color Green",
+    value: "green",
   },
   {
-    label: 'The color blue',
-    value: 'blue'
+    label: "A Shade of Blue",
+    value: "blue",
   }
 ];
 
 const App = () => {
   return (
     <div>
-      <Dropdown option={options} />
+      <Dropdown options={options} />
     </div>
   );
 }
