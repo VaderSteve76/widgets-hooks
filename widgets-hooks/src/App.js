@@ -22,14 +22,17 @@ const options = [
   {
     label: "The Color Red",
     value: "red",
+    hexCode: "#FF0000"
   },
   {
     label: "The Color Green",
     value: "green",
+    hexCode: "#149414"
   },
   {
     label: "A Shade of Blue",
     value: "blue",
+    hexCode: "#1167b1"
   }
 ];
 
